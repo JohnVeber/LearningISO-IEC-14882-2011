@@ -39,3 +39,21 @@
 
 # debug information files
 *.dwo
+
+# Эти расширения добавил сам
+# каталоги сборки:
+build/
+bin/
+# временные файлы IDE
+.vs/
+.idea/
+.vscode/
+*.user
+*.suo
+*.filters
+*.user.props
+# Временные файлы
+*.tmp
+*.swp
+# Отладка
+*.ilk
