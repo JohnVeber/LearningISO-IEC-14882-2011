@@ -5,7 +5,7 @@ int main(){
     std::cout << "/*";
     // Example 1 (fixed)
     /* No changes needed.*/
-    
+
     // Example 2
     std::cout << "*/";
     // Example 2 (fixed)

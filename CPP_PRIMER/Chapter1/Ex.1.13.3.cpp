@@ -3,7 +3,7 @@ int main(){
     std::cout << "Enter the start and the end of any range:" << std::endl;
     int start = 0, end = 0;
     std::cin >> start >> end;
-    
+
     if (start < end){
         std::cout << "List of numbers from " << start << " to " << end << " is:" << std::endl;
         for (int current = start; current <= end; ++current){
