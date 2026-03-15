@@ -1,4 +1,4 @@
-/* As the compillation result we will get the next warning: "missing terminating ' character" */
+/* As the compilation result we will get the next warning: "missing terminating ' character" */
 #include <iostream>
 int main(){
     // Example 1
