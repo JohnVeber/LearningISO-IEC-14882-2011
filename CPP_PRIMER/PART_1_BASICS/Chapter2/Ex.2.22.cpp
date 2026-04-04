@@ -14,4 +14,5 @@ int main(){
         std::cout << "*p != 0 (object that p points to is not equal to zero), *p = " << *p << std::endl;
     }
     else std::cout << "*p = 0 (object that p points to is equal to zero), *p = " << *p << std::endl;
+    return 0;
 }

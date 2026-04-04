@@ -18,6 +18,7 @@ int main(){
 
     std::cout << "cnt = " << cnt << std::endl; // Expected result in this row is "cnt = 1".
     std::cout << "sz = " << sz << std::endl; // Expected result in this row is "sz = 0".
+    return 0;
 }
 
 /* **************************************************** COMMENTS: **************************************************** */

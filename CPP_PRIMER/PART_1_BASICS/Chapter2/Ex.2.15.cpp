@@ -3,7 +3,7 @@
 
 int ival = 1.01; // The conversion is acceptable (but not recommended).
 
-// It is unacceptable: The non-constant link (int&) requires l-value - an object with an address in memory.
+// It is unacceptable: The non-constant reference (int&) requires l-value - an object with an address in memory.
 // int &rval1 = 1.01;
 
 int &rval2 = ival;

@@ -13,6 +13,7 @@ int main(){
     int *p = &i;
 
     std::cout << "Value of *p is:  " << *p << std::endl; // Expected result in this row is "Value of *p is:  "0".
+    return 0;
 }
 
 /* **************************************************** COMMENTS: **************************************************** */
