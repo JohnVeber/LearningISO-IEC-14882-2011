@@ -1,4 +1,4 @@
-/* Rows with invalid assignments are commented on. */
+/* Rows with invalid cases are commented on. */
 #include <iostream>
 
 int main(){
