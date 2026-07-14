@@ -57,3 +57,5 @@ bin/
 *.swp
 # Отладка
 *.ilk
+# Файл для экспериментов
+Experiments.cpp
