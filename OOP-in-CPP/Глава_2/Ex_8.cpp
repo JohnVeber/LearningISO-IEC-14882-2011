@@ -9,7 +9,6 @@ int main(){
     << left << setfill('.') << setw(9) << "Ugrymovka" << right << setw(12) << pop3 << endl;
     return 0;
 }
-
 // The expected output is:
 // City       Population
 // Moscow........8425785
