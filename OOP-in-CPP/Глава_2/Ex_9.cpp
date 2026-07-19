@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-int main() {
+int main(){
     int a, b, c, d;
     char slash;
     cout << "Enter the first fraction in a/b format: ";
