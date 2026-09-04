@@ -7,4 +7,5 @@ int main(){
     << setw(4) << ++var << setw(9) << 7290 << endl
     << setw(4) << ++var << setw(9) << 11300 << endl
     << setw(4) << ++var << setw(9) << 16200 << endl;
+    return 0;
 }

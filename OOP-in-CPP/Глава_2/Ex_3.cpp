@@ -7,4 +7,5 @@ int main(){
     res += VAR;
     cout << res << endl
     << --res << endl;
+    return 0;
 }
