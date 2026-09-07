@@ -1,5 +1,4 @@
 #include <iostream>
-#include <limits>  // для numeric_limits
 using namespace std;
 
 struct phone {
