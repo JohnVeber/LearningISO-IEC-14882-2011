@@ -37,9 +37,10 @@ int main() {
             emp_type = researcher;
             cout << "Full position name: researcher" << endl;
             break;
-        default:
+        default:{
             cout << "Error: Invalid first letter." << endl;
             return 1;
+        }
     }
 
     return 0;

@@ -1,8 +1,8 @@
 #include <iostream>
 using namespace std;
 
-#define ERROR_INT "Error: Expected an integer for employee number."
-#define ERROR_FLOAT "Error: Expected a number for salary."
+#define ERROR_INT "Error: Expected a positive integer for employee number."
+#define ERROR_FLOAT "Error: Expected a positive number for salary."
 
 struct employee {
     int number;
@@ -14,36 +14,36 @@ int main() {
 
     cout << "Enter data for employee 1:" << endl;
     cout << "Employee number: ";
-    if (!(cin >> emp1.number)) {
+    if (!(cin >> emp1.number) || emp1.number <= 0) {
         cout << ERROR_INT << endl;
         return 1;   // Error code for invalid integer input
     }
     cout << "Salary: ";
-    if (!(cin >> emp1.salary)) {
+    if (!(cin >> emp1.salary) || emp1.salary < 0.0f) {
         cout << ERROR_FLOAT << endl;
         return 2;   // Error code for invalid float input
     }
 
     cout << "Enter data for employee 2:" << endl;
     cout << "Employee number: ";
-    if (!(cin >> emp2.number)) {
+    if (!(cin >> emp2.number) || emp2.number <= 0) {
         cout << ERROR_INT << endl;
         return 1;
     }
     cout << "Salary: ";
-    if (!(cin >> emp2.salary)) {
+    if (!(cin >> emp2.salary) || emp2.salary < 0.0f) {
         cout << ERROR_FLOAT << endl;
         return 2;
     }
 
     cout << "Enter data for employee 3:" << endl;
     cout << "Employee number: ";
-    if (!(cin >> emp3.number)) {
+    if (!(cin >> emp3.number) || emp3.number <= 0) {
         cout << ERROR_INT << endl;
         return 1;
     }
     cout << "Salary: ";
-    if (!(cin >> emp3.salary)) {
+    if (!(cin >> emp3.salary) || emp3.salary < 0.0f) {
         cout << ERROR_FLOAT << endl;
         return 2;
     }
