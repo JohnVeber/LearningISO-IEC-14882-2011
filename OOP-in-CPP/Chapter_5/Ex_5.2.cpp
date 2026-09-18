@@ -1,9 +1,40 @@
 #include <iostream>
 using namespace std;
 
-// Function to raise n to the power p
-// Default value for p is 2 (squaring)
-double power(double n, int p = 2) {
+double raiseToPower(double, int = 2); // Prototype with default argument
+
+int main() {
+    double number;
+    int power;
+
+    cout << "Enter the base number (n): ";
+    if (!(cin >> number)) {
+        cout << "Error: Expected a number for the base." << endl;
+        return 1;
+    }
+
+    cout << "Enter the exponent (p) or press Enter to square: ";
+    if (!(cin >> power)) {
+        cin.clear();              // Clear error state
+        cin.ignore(1000, '\n');   // Discard invalid input
+        power = 2;                // Use default exponent
+        cout << "Warning: Could not read exponent. Using default value 2." << endl;
+    }
+
+    // Check that exponent is non-negative
+    if (power < 0) {
+        cout << "Error: Exponent must be a non-negative integer." << endl;
+        return 2;
+    }
+
+    double result = raiseToPower(number, power);
+
+    cout << number << " raised to the power " << power << " is " << result << endl;
+
+    return 0;
+}
+
+double raiseToPower(double n, int p) {
     double result = 1.0;
     for (int i = 0; i < p; ++i) {
         result *= n;
@@ -11,27 +42,6 @@ double power(double n, int p = 2) {
     return result;
 }
 
-int main() {
-    double n;
-    int p;
-
-    cout << "Enter the base number (n): ";
-    if (!(cin >> n)) {
-        cout << "Error: Expected a number for the base." << endl;
-        return 1;
-    }
-
-    cout << "Enter the exponent (p) or press Enter to square: ";
-    // Try to read p; if it fails (e.g., user pressed Enter), use default
-    if (!(cin >> p)) {
-        cin.clear();           // Clear the error state
-        cin.ignore(1000, '\n'); // Discard invalid input
-        p = 2;                 // Use default exponent
-    }
-
-    double result = power(n, p);
-
-    cout << n << " raised to the power " << p << " is " << result << endl;
-
-    return 0;
-}
+// TODO:
+// 1) Handle Enter key press for the exponent input using cin.peek() or getline().
+// 2) Add overflow protection for large exponents (e.g., check if result exceeds double limits).
