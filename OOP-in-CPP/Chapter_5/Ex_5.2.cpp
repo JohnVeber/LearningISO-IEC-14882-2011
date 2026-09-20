@@ -6,6 +6,7 @@ double raiseToPower(double, int = 2); // Prototype with default argument
 int main() {
     double number;
     int power;
+    char yesNo;
 
     cout << "Enter the base number (n): ";
     if (!(cin >> number)) {
@@ -13,23 +14,27 @@ int main() {
         return 1;
     }
 
-    cout << "Enter the exponent (p) or press Enter to square: ";
-    if (!(cin >> power)) {
-        cin.clear();              // Clear error state
-        cin.ignore(1000, '\n');   // Discard invalid input
-        power = 2;                // Use default exponent
-        cout << "Warning: Could not read exponent. Using default value 2." << endl;
+    cout << "Do you want to enter an exponent? (y/n): ";
+    cin >> yesNo;
+
+    double result;
+    if (yesNo == 'y' || yesNo == 'Y') {
+        cout << "Enter the exponent (p): ";
+        if (!(cin >> power)) {
+            cout << "Error: Expected an integer for the exponent." << endl;
+            return 2;
+        }
+        if (power < 0) {
+            cout << "Error: Exponent must be non-negative." << endl;
+            return 3;
+        }
+        result = raiseToPower(number, power); // Two arguments - use the explicitly entered degree
+        cout << number << " raised to the power " << power << " is " << result << endl;
     }
-
-    // Check that exponent is non-negative
-    if (power < 0) {
-        cout << "Error: Exponent must be a non-negative integer." << endl;
-        return 2;
+    else {
+        result = raiseToPower(number); // One argument - use default.
+        cout << number << " squared is " << result << endl;
     }
-
-    double result = raiseToPower(number, power);
-
-    cout << number << " raised to the power " << power << " is " << result << endl;
 
     return 0;
 }
@@ -43,5 +48,4 @@ double raiseToPower(double n, int p) {
 }
 
 // TODO:
-// 1) Handle Enter key press for the exponent input using cin.peek() or getline().
-// 2) Add overflow protection for large exponents (e.g., check if result exceeds double limits).
+// 1) Add overflow protection for large exponents (e.g., check if result exceeds double limits).
