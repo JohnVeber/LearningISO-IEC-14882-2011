@@ -37,10 +37,10 @@ int main()
 // Returns the highest of two values of the "Distance" type.
 Distance maxengl(Distance a, Distance b)
 {
-    double totalA = a.feet * 12.0 + a.inches;
-    double totalB = b.feet * 12.0 + b.inches;
+    double totalInchesA = a.feet * 12.0 + a.inches;
+    double totalInchesB = b.feet * 12.0 + b.inches;
 
-    if (totalA >= totalB)
+    if (totalInchesA >= totalInchesB)
         return a;
     else
         return b;
