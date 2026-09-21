@@ -1,8 +1,7 @@
 #include <iostream>
 using namespace std;
 
-struct Distance    // Length in the English system.
-{
+struct Distance{    // Length in the English system.
     int feet;
     float inches;
 };
@@ -10,8 +9,7 @@ struct Distance    // Length in the English system.
 Distance maxengl(Distance, Distance);
 void engldisp(Distance);    // From RETSTRC.cpp (page 185).
 
-int main()
-{
+int main(){
     Distance d1, d2, dmax;
 
     cout << "\nEnter number of feet for d1: "; cin >> d1.feet;
@@ -35,8 +33,7 @@ int main()
 
 //--------------------------------------------------------
 // Returns the highest of two values of the "Distance" type.
-Distance maxengl(Distance a, Distance b)
-{
+Distance maxengl(Distance a, Distance b){
     double totalInchesA = a.feet * 12.0 + a.inches;
     double totalInchesB = b.feet * 12.0 + b.inches;
 
@@ -48,8 +45,7 @@ Distance maxengl(Distance a, Distance b)
 
 //--------------------------------------------------------
 // Displays the fields of a structural variable with type "Distance".
-void engldisp(Distance dd)
-{
+void engldisp(Distance dd){
     cout << dd.feet << "\'-" << dd.inches << "\"";
 }
 
