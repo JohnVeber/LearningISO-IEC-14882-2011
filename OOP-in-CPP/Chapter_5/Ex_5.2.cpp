@@ -1,11 +1,11 @@
 #include <iostream>
 using namespace std;
 
-double raiseToPower(double, int = 2); // Prototype with default argument
+double power(double, int = 2); // Prototype with default argument
 
 int main() {
     double number;
-    int power;
+    int raiseToPower;
     char yesNo;
 
     cout << "Enter the base number (n): ";
@@ -20,26 +20,26 @@ int main() {
     double result;
     if (yesNo == 'y' || yesNo == 'Y') {
         cout << "Enter the exponent (p): ";
-        if (!(cin >> power)) {
+        if (!(cin >> raiseToPower)) {
             cout << "Error: Expected an integer for the exponent." << endl;
             return 2;
         }
-        if (power < 0) {
+        if (raiseToPower < 0) {
             cout << "Error: Exponent must be non-negative." << endl;
             return 3;
         }
-        result = raiseToPower(number, power); // Two arguments - use the explicitly entered degree
-        cout << number << " raised to the power " << power << " is " << result << endl;
+        result = power(number, raiseToPower); // Two arguments - use the explicitly entered degree
+        cout << number << " raised to the power " << raiseToPower << " is " << result << endl;
     }
     else {
-        result = raiseToPower(number); // One argument - use default.
+        result = power(number); // One argument - use default.
         cout << number << " squared is " << result << endl;
     }
 
     return 0;
 }
 
-double raiseToPower(double n, int p) {
+double power(double n, int p) {
     double result = 1.0;
     for (int i = 0; i < p; ++i) {
         result *= n;
