@@ -1,9 +1,6 @@
-// Program use a function which counts its own calls using a global variable.
+// Program use a function which counts its own calls using a static local variable.
 #include <iostream>
 using namespace std;
-
-// Global variable: lives for the whole program, visible to every function.
-int callCount = 0;
 
 void showCallCount();
 
@@ -18,8 +15,9 @@ int main() {
 }
 
 //--------------------------------------------------------
-// Increments the global counter and prints how many times the function has been called so far.
+// Uses a static local counter: it is initialized once, keeps its value between calls, and is visible only here.
 void showCallCount() {
+    static int callCount = 0;   // Initialized only on the first call.
     ++callCount;
     cout << "Function called " << callCount << " time(s)." << endl;
 }
