@@ -89,3 +89,6 @@ void swap(Time& a, Time& b) {
     a = b;
     b = temp;
 }
+
+// TODO:
+// 1) Add input validation.
