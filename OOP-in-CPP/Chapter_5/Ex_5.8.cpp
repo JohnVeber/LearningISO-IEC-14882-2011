@@ -29,7 +29,7 @@ int main() {
 }
 
 //--------------------------------------------------------
-// Function to swap two int values (passed by reference)
+// Function to swap two int values (passed by reference).
 void swap(int& a, int& b) {
     int temp = a;
     a = b;

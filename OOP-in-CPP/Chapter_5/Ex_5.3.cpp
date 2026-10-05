@@ -27,7 +27,7 @@ int main() {
     return 0;
 }
 
-// Function to set the smaller argument to zero (passed by reference)
+// Function to set the smaller argument to zero (passed by reference).
 void zeroSmaller(int& a, int& b) {
     if (a < b) {
         a = 0;

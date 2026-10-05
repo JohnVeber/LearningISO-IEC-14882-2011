@@ -1,5 +1,5 @@
 #include <iostream>
-#include <iomanip>  // for setw() and setfill()
+#include <iomanip>  // For setw() and setfill().
 using namespace std;
 
 struct Time {
@@ -81,12 +81,12 @@ long time_to_secs(Time t) {
 // Converts total seconds to a Time value with normalization.
 Time secs_to_time(long seconds_amount) {
     Time t;
-    t.hours   = static_cast<int>(seconds_amount / 3600);      // Extract hours
-    long rem  = seconds_amount % 3600;                        // Remaining seconds after extracting hours
-    t.minutes = static_cast<int>(rem / 60);                   // Extract minutes from remaining seconds
-    t.seconds = static_cast<int>(rem % 60);                   // Remaining seconds after extracting minutes
+    t.hours   = static_cast<int>(seconds_amount / 3600);      // Extract hours.
+    long rem  = seconds_amount % 3600;                        // Remaining seconds after extracting hours.
+    t.minutes = static_cast<int>(rem / 60);                   // Extract minutes from remaining seconds.
+    t.seconds = static_cast<int>(rem % 60);                   // Remaining seconds after extracting minutes.
 
-    t.hours %= 24; // Handle overflow: if hours exceed 23, wrap around (24-hour clock)
+    t.hours %= 24; // Handle overflow: if hours exceed 23, wrap around (24-hour clock).
 
     return t;
 }

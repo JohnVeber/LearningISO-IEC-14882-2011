@@ -1,5 +1,5 @@
 #include <iostream>
-#include <iomanip>  // for setw() and setfill()
+#include <iomanip>  // For setw() and setfill().
 using namespace std;
 
 struct Time {
@@ -14,7 +14,7 @@ void swap(Time& a, Time& b);
 int main() {
     Time t1, t2;
 
-    // --- input t1 ---
+    // Input t1.
     cout << "Enter the first value (hours, minutes and seconds).";
     cout << "\nEnter hours (0-23): ";
     if (!(cin >> t1.hours) || t1.hours < 0 || t1.hours > 23) {
@@ -34,7 +34,7 @@ int main() {
         return 3;
     }
 
-    // --- input t2 ---
+    // Input t2.
     cout << "Enter the second value (hours, minutes and seconds).";
     cout << "\nEnter hours (0-23): ";
     if (!(cin >> t2.hours) || t2.hours < 0 || t2.hours > 23) {
@@ -54,7 +54,7 @@ int main() {
         return 6;
     }
 
-    // --- output before swap ---
+    // Output before swap.
     cout << "\nBefore swap: t1 = "
          << setw(2) << setfill('0') << t1.hours << ":"
          << setw(2) << setfill('0') << t1.minutes << ":"
@@ -65,10 +65,10 @@ int main() {
          << setw(2) << setfill('0') << t2.minutes << ":"
          << setw(2) << setfill('0') << t2.seconds << endl;
 
-    // --- swap ---
+    // Swap.
     swap(t1, t2);
 
-    // --- output after swap ---
+    // Output after swap.
     cout << "After  swap: t1 = "
          << setw(2) << setfill('0') << t1.hours << ":"
          << setw(2) << setfill('0') << t1.minutes << ":"

@@ -91,7 +91,7 @@ sterling add_sterling(sterling s1, sterling s2) {
 // Displays a sterling value in the format "£pounds.shillings.pence".
 
 void show_sterling(const sterling& s) { // A keyword "const" is added as a guarantee that function will not change the variable.
-    cout << "\xC2\xA3" // UTF-8 character "£" takes 2 bytes (0xC2 and 0xA3)
+    cout << "\xC2\xA3" // UTF-8 character "£" takes 2 bytes (0xC2 and 0xA3).
     << s.pounds << SEPARATOR
     << setw(2) << setfill('0') << s.shillings << SEPARATOR
     << setw(2) << setfill('0') << s.pence;

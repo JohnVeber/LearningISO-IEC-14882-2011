@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-double power(double, int = 2); // Prototype with default argument
+double power(double, int = 2); // Prototype with default argument.
 
 int main() {
     double number;
@@ -28,7 +28,7 @@ int main() {
             cout << "Error: Exponent must be non-negative." << endl;
             return 3;
         }
-        result = power(number, raiseToPower); // Two arguments - use the explicitly entered degree
+        result = power(number, raiseToPower); // Two arguments - use the explicitly entered degree.
         cout << number << " raised to the power " << raiseToPower << " is " << result << endl;
     }
     else {
