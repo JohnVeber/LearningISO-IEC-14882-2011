@@ -10,156 +10,156 @@ using namespace std;
 enum etype { unknown, laborer, secretary, manager, accountant, executive, researcher };
 
 class Date {
-private:
-    int month;
-    int day;
-    int year;
+    private:
+        int month;
+        int day;
+        int year;
 
-public:
-    Date() : month(0), day(0), year(0) { } // Default constructor: initializes all fields to zero.
+    public:
+        Date() : month(0), day(0), year(0) { } // Default constructor: initializes all fields to zero.
 
-    // Method for reading a date from the user in MM/DD/YY format.
-    void getdate() {
-        char slash;
+        // Method for reading a date from the user in MM/DD/YY format.
+        void getdate() {
+            char slash;
 
-        while (true) { // Repeats the request until valid input is entered.
-            cout << "Enter hire date (MM/DD/YY): ";
+            while (true) { // Repeats the request until valid input is entered.
+                cout << "Enter hire date (MM/DD/YY): ";
 
-            cin >> month >> slash;
-            if (!cin || slash != '/') {
-                cin.clear();
-                cin.ignore(10000, '\n');
-                cout << "Error: use MM/DD/YY format (e.g., 12/31/02). Try again." << endl;
-                continue;
+                cin >> month >> slash;
+                if (!cin || slash != '/') {
+                    cin.clear();
+                    cin.ignore(10000, '\n');
+                    cout << "Error: use MM/DD/YY format (e.g., 12/31/02). Try again." << endl;
+                    continue;
+                }
+
+                cin >> day >> slash;
+                if (!cin || slash != '/') {
+                    cin.clear();
+                    cin.ignore(10000, '\n');
+                    cout << "Error: use MM/DD/YY format (e.g., 12/31/02). Try again." << endl;
+                    continue;
+                }
+
+                cin >> year;
+                if (!cin) {
+                    cin.clear();
+                    cin.ignore(10000, '\n');
+                    cout << "Error: invalid year. Try again." << endl;
+                    continue;
+                }
+
+                if (month < 1 || month > 12) {
+                    cout << "Error: month must be between 1 and 12. Try again." << endl;
+                    continue;
+                }
+                if (day < 1 || day > 31) {
+                    cout << "Error: day must be between 1 and 31. Try again." << endl;
+                    continue;
+                }
+                if (year < 0 || year > 99) {
+                    cout << "Error: year must be between 0 and 99. Try again." << endl;
+                    continue;
+                }
+
+                break;
             }
-
-            cin >> day >> slash;
-            if (!cin || slash != '/') {
-                cin.clear();
-                cin.ignore(10000, '\n');
-                cout << "Error: use MM/DD/YY format (e.g., 12/31/02). Try again." << endl;
-                continue;
-            }
-
-            cin >> year;
-            if (!cin) {
-                cin.clear();
-                cin.ignore(10000, '\n');
-                cout << "Error: invalid year. Try again." << endl;
-                continue;
-            }
-
-            if (month < 1 || month > 12) {
-                cout << "Error: month must be between 1 and 12. Try again." << endl;
-                continue;
-            }
-            if (day < 1 || day > 31) {
-                cout << "Error: day must be between 1 and 31. Try again." << endl;
-                continue;
-            }
-            if (year < 0 || year > 99) {
-                cout << "Error: year must be between 0 and 99. Try again." << endl;
-                continue;
-            }
-
-            break;
         }
-    }
 
-    // Constant method: prints the date in MM/DD/YY format with leading zeros.
-    void showdate() const {
-        cout << setfill('0')
-             << setw(2) << month << "/"
-             << setw(2) << day   << "/"
-             << setw(2) << year
-             << setfill(' ');
-    }
+        // Constant method: prints the date in MM/DD/YY format with leading zeros.
+        void showdate() const {
+            cout << setfill('0')
+                << setw(2) << month << "/"
+                << setw(2) << day   << "/"
+                << setw(2) << year
+                << setfill(' ');
+        }
 };
 
 class Employee {
-private:
-    int employeeId;
-    float employeeSalary;
-    Date hireDate;
-    etype position;
+    private:
+        int employeeId;
+        float employeeSalary;
+        Date hireDate;
+        etype position;
 
-public:
-    // Position is set to 'unknown' deliberately: see the comment above 'enum etype'.
-    Employee() : employeeId(0), employeeSalary(0.0f), hireDate(), position(unknown) { } // Default constructor: initializes all fields to zero.
+    public:
+        // Position is set to 'unknown' deliberately: see the comment above 'enum etype'.
+        Employee() : employeeId(0), employeeSalary(0.0f), hireDate(), position(unknown) { } // Default constructor: initializes all fields to zero.
 
-    // Method for setting the values from input.
-    void getemploy() {
-        // Employee ID.
-        while (true) {
-            cout << "Enter the employee's Id: ";
-            cin >> employeeId;
-            if (!cin || employeeId <= 0) {
-                cin.clear();
-                cin.ignore(10000, '\n');
-                cout << "Error: expected a positive integer. Try again." << endl;
-                continue;
+        // Method for setting the values from input.
+        void getemploy() {
+            // Employee ID.
+            while (true) {
+                cout << "Enter the employee's Id: ";
+                cin >> employeeId;
+                if (!cin || employeeId <= 0) {
+                    cin.clear();
+                    cin.ignore(10000, '\n');
+                    cout << "Error: expected a positive integer. Try again." << endl;
+                    continue;
+                }
+                break;
             }
-            break;
-        }
 
-        // Employee salary.
-        while (true) {
-            cout << "Enter the employee's salary ($): ";
-            cin >> employeeSalary;
-            if (!cin || employeeSalary < 0.0f) {
-                cin.clear();
-                cin.ignore(10000, '\n');
-                cout << "Error: expected a non-negative number. Try again." << endl;
-                continue;
+            // Employee salary.
+            while (true) {
+                cout << "Enter the employee's salary ($): ";
+                cin >> employeeSalary;
+                if (!cin || employeeSalary < 0.0f) {
+                    cin.clear();
+                    cin.ignore(10000, '\n');
+                    cout << "Error: expected a non-negative number. Try again." << endl;
+                    continue;
+                }
+                break;
             }
-            break;
-        }
 
-        // Hire date.
-        hireDate.getdate();
+            // Hire date.
+            hireDate.getdate();
 
-        // Position, entered by the first letter.
-        while (true) {
-            char firstLetter;
-            cout << "Enter the first letter of the employee's position" << endl;
-            cout << "(laborer, secretary, manager, accountant, executive, researcher): ";
-            cin >> firstLetter;
+            // Position, entered by the first letter.
+            while (true) {
+                char firstLetter;
+                cout << "Enter the first letter of the employee's position" << endl;
+                cout << "(laborer, secretary, manager, accountant, executive, researcher): ";
+                cin >> firstLetter;
 
-            switch (firstLetter) {
-                case 'l': position = laborer;    break;
-                case 's': position = secretary;  break;
-                case 'm': position = manager;    break;
-                case 'a': position = accountant; break;
-                case 'e': position = executive;  break;
-                case 'r': position = researcher; break;
-                default:
-                    cout << "Error: invalid first letter. Try again." << endl;
-                    continue; // Back to the top of the while loop.
+                switch (firstLetter) {
+                    case 'l': position = laborer;    break;
+                    case 's': position = secretary;  break;
+                    case 'm': position = manager;    break;
+                    case 'a': position = accountant; break;
+                    case 'e': position = executive;  break;
+                    case 'r': position = researcher; break;
+                    default:
+                        cout << "Error: invalid first letter. Try again." << endl;
+                        continue; // Back to the top of the while loop.
+                }
+                break;
             }
-            break;
         }
-    }
 
-    // Constant method: prints the values to the screen.
-    void putemploy() const {
-        cout << "ID: " << employeeId << endl;
-        cout << "Salary: " << fixed << setprecision(2) << employeeSalary << "$" << endl;
-        cout.unsetf(ios::fixed); // Return format back.
-        cout << setprecision(6); // Return precision back to default (6).
-        cout << "Hire date: "; hireDate.showdate(); cout << endl;
-        cout << "Position: ";
+        // Constant method: prints the values to the screen.
+        void putemploy() const {
+            cout << "ID: " << employeeId << endl;
+            cout << "Salary: " << fixed << setprecision(2) << employeeSalary << "$" << endl;
+            cout.unsetf(ios::fixed); // Return format back.
+            cout << setprecision(6); // Return precision back to default (6).
+            cout << "Hire date: "; hireDate.showdate(); cout << endl;
+            cout << "Position: ";
 
-        switch (position) {
-            case unknown:    cout << "not set";    break;
-            case laborer:    cout << "laborer";    break;
-            case secretary:  cout << "secretary";  break;
-            case manager:    cout << "manager";    break;
-            case accountant: cout << "accountant"; break;
-            case executive:  cout << "executive";  break;
-            case researcher: cout << "researcher"; break;
+            switch (position) {
+                case unknown:    cout << "not set";    break;
+                case laborer:    cout << "laborer";    break;
+                case secretary:  cout << "secretary";  break;
+                case manager:    cout << "manager";    break;
+                case accountant: cout << "accountant"; break;
+                case executive:  cout << "executive";  break;
+                case researcher: cout << "researcher"; break;
+            }
+            cout << endl;
         }
-        cout << endl;
-    }
 };
 
 int main() {

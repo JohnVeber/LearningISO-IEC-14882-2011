@@ -3,31 +3,31 @@
 using namespace std;
 
 class tollBooth {
-private:
-    unsigned int carsPassed;
-    double totalIncome;
+    private:
+        unsigned int carsPassed;
+        double totalIncome;
 
-public:
-    tollBooth() : carsPassed(0), totalIncome(0) { } // Default constructor: initializes both values to zero.
+    public:
+        tollBooth() : carsPassed(0), totalIncome(0) { } // Default constructor: initializes both values to zero.
 
-    // Method for incrementing cars amount and total income.
-    void payingCar() {
-        carsPassed++;
-        totalIncome += 0.50;
-    }
+        // Method for incrementing cars amount and total income.
+        void payingCar() {
+            carsPassed++;
+            totalIncome += 0.50;
+        }
 
-    // Method for incrementing just cars amount.
-    void nopayCar() {
-        carsPassed++;
-    }
+        // Method for incrementing just cars amount.
+        void nopayCar() {
+            carsPassed++;
+        }
 
-    // Method displays both fields (constant method).
-    void display() const {
-        cout << "The value of the fields are:\n"
-             << " carsPassed  : " << carsPassed
-             << "\n totalIncome : " << fixed << "$" << setprecision(2)
-             << totalIncome << endl;
-    }
+        // Method displays both fields (constant method).
+        void display() const {
+            cout << "The value of the fields are:\n"
+                << " carsPassed  : " << carsPassed
+                << "\n totalIncome : " << fixed << "$" << setprecision(2)
+                << totalIncome << endl;
+        }
 };
 
 int main() {

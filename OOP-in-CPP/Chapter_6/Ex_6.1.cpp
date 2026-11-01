@@ -2,29 +2,29 @@
 using namespace std;
 
 class Int {
-private:
-    int value;
+    private:
+        int value;
 
-public:
-    Int() : value(0) { } // Default constructor: initializes value to zero.
+    public:
+        Int() : value(0) { } // Default constructor: initializes value to zero.
 
-    Int(int v) : value(v) { } // Parameterized constructor.
+        Int(int v) : value(v) { } // Parameterized constructor.
 
-    // Method for setting the value from input.
-    void setvalue() {
-        cout << "Enter the value: ";
-        cin >> value;
-    }
+        // Method for setting the value from input.
+        void setvalue() {
+            cout << "Enter the value: ";
+            cin >> value;
+        }
 
-    // Method for printing the value to the screen.
-    void printvalue() const {
-        cout << "The value of the field is: " << value << endl;
-    }
+        // Method for printing the value to the screen.
+        void printvalue() const {
+            cout << "The value of the field is: " << value << endl;
+        }
 
-    // Method that sums two "Int" objects.
-    void sumvalues(Int n1, Int n2) {
-        value = n1.value + n2.value;
-    }
+        // Method that sums two "Int" objects.
+        void sumvalues(Int n1, Int n2) {
+            value = n1.value + n2.value;
+        }
 };
 
 int main() {
