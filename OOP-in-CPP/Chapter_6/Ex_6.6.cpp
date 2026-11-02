@@ -143,8 +143,9 @@ class Employee {
         // Constant method: prints the values to the screen.
         void putemploy() const {
             cout << "ID: " << employeeId << endl;
-            cout << "Salary: " << fixed << setprecision(2) << employeeSalary << "$" << endl;
-            cout.unsetf(ios::fixed); // Return format back.
+            cout << "Salary: " << fixed << setprecision(2) << employeeSalary << "$" << endl; // Set needed format: disable scientific notation
+                                                                                             // and set two digits after the decimal point.
+            cout.unsetf(ios::fixed); // Return to default (non-fixed) format.
             cout << setprecision(6); // Return precision back to default (6).
             cout << "Hire date: "; hireDate.showdate(); cout << endl;
             cout << "Position: ";
