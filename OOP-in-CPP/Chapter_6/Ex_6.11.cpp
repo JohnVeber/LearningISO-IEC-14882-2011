@@ -75,27 +75,31 @@ public:
         lowterms();
     }
 
-    void lowterms(); // Prototype of the method for reducing the fraction.
+    void lowterms(); // Prototype of the method for reducing a fraction.
 };
 
+void Fraction::lowterms() { // Method for reducing a fraction to its lowest terms.
+    long tnum, tden, temp, gcd; // gcd is "greatest common divisor" of numerator and denominator.
 
-void Fraction::lowterms() { // Method for reducing the fraction to its lowest terms.
-    long tnum, tden, temp, gcd;
+    tnum = labs(num); // labs() returns the absolute value of a long argument.
+    tden = labs(den); // We take the absolute value of denominator too because Euclid's algorithm assumes operations on positive numbers.
 
-    tnum = labs(num);
-    tden = labs(den);
-
-    if (tden == 0) {
+    if (tden == 0) { // Division by zero handling.
         cout << "Invalid denominator!" << endl;
         exit(1); // See TODO №2.
-    } else if (tnum == 0) {
-        num = 0; den = 1; return;
+    }
+    else if (tnum == 0) { // In case numerator is zero — exit the method and set the fields to 0/1.
+        num = 0;
+        den = 1;
+        return;
     }
 
     // Euclid's algorithm.
     while (tnum != 0) {
         if (tnum < tden) {
-            temp = tnum; tnum = tden; tden = temp;
+            temp = tnum;
+            tnum = tden;
+            tden = temp;
         }
         tnum = tnum - tden;
     }
@@ -152,3 +156,4 @@ int main() {
 // TODO:
 // 1) Using exit() in a constructor is bad practice (no stack unwinding). Rewrite without exit(), e.g. using exceptions.
 // 2) Using exit() in lowterms() is also bad practice. Rewrite too.
+// 3) Optimize algorithm in lowterms(): the current subtraction loop is slow. Consider using remainder (%) operation to reduce it to O(log n).
